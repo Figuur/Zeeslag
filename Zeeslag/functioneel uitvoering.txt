@@ -1,0 +1,27 @@
+# functionele doelstelling
+
+maken van een speelmap in canvas
+
+maken van een snake
+
+toetsen instellen om mee te bewegen
+
+random plaatsen van blokjes
+
+blokjes worden er bij opgetelt als opgegeten
+
+Snake word blokje langer
+
+Snake raakt zichzelf = game over
+
+
+
+
+
+
+score bijhouden per blokje en optellen
+
+
+
+
+

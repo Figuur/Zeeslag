@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Zeeslag</title>
+</head>
+<body>
+        <div class="game-wrapper">
+        <!-- <canvas id="myCanvas" width="1000" height="1000"></canvas> -->
+            <table id="Zeeslag-bord">
+                <tr>
+                    <th id="table-heading">×</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                    <th>10</th>
+                </tr>
+                <script>
+                    for (let i = 0; i < 10; i++) {
+                        document.write('<tr><th>' + String.fromCharCode(65 + i) + '</th>');
+                        for (let j = 0; j < 10; j++) {
+                            const letter = String.fromCharCode(65 + i);
+                            const number = j + 1;
+                            const cellId = `${letter}${number}`;
+                            document.write(`<td id="${cellId}">${cellId}</td>`);
+                        }
+                        document.write('</tr>');
+                    }
+                </script>
+            </table>
+    </div>
+</body>
+</html>

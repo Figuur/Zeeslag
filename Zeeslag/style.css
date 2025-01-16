@@ -1,0 +1,49 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url('achtergrond.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+table {
+    width: 1000px;
+    height: 1000px;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+#table-heading {
+    font-size: 3em;
+    width: calc(100% / 11);
+    height: calc(100% / 11);
+    background-color: gray !important;
+}
+
+th {
+    border: 1px solid black;
+    font-size: 2em;
+    background-color: lightsteelblue; 
+}
+
+td {
+    border: 1px solid black;
+    text-align: center;
+    width: calc(100% / 11);
+    height: calc(100% / 11);
+    background-color: rgb(0, 68, 255);
+    transition: 0.5s;
+    font-size: 1em;
+    color: transparent;
+}
+
+td:hover {
+    cursor: pointer;
+    background-color: rgb(251, 255, 0);
+    color: black;
+}
