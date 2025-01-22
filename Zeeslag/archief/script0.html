@@ -1,0 +1,31 @@
+let zee = [0,0,0,0,0,0,0,0,0,0];  // Model
+
+
+
+
+function randombootplaatsen(){
+    let tellervoorboot = zee.length - 2;
+    let randomgetal = Math.floor(Math.random() * tellervoorboot);
+    zee[randomgetal] = 1;
+    randomgetal++;
+    zee[randomgetal] = 1;
+    randomgetal++;
+    zee[randomgetal] = 1;
+	toonzee();
+}
+function toonzee(){ // View
+	let eindstring = "<div id=hetbord>";
+	for(let x = 0; x < zee.length; x++){
+		if(zee[x] === 1){
+			eindstring += `<div class="zeekleur">x</div>`
+		}else{
+			eindstring += `<div class="boot1kleur">y</div>`
+		}
+	}
+	eindstring += "</div>";
+	document.getElementById("zeediv").innerHTML = eindstring;
+}
+
+window.onload = randombootplaatsen;
+
+<div id="zeediv"></div>

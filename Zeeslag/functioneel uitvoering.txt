@@ -1,27 +1,54 @@
-# functionele doelstelling
+Voorbeeld:
+https://preview.codecanyon.net/item/battleship-html5-game-phaser-3/full_screen_preview/26117729?_ga=2.121523342.762015030.1737385218-379731464.1737385218
 
-maken van een speelmap in canvas
-
-maken van een snake
-
-toetsen instellen om mee te bewegen
-
-random plaatsen van blokjes
-
-blokjes worden er bij opgetelt als opgegeten
-
-Snake word blokje langer
-
-Snake raakt zichzelf = game over
+# Functionele doelstelling voor het Zeeslag Bord
 
 
+Bordstructuur:
+-    Maak een 2D-array van 11x11 om het bord te representeren.
+-    De eerste rij (index 0) bevat de cijfers 0 tot 10, die de kolommen representeren.
+-    De eerste kolom (index 0) bevat de letters van A tot J, die de rijen representeren.
+-    De overige cellen (index 1-10) zijn de speelvelden waar de schepen kunnen worden geplaatst.
+
+-----------------------------------------------------------------------------------------------
+
+Plaatsing van het schip:
+
+-    Definieer een schip van 3 tegels. Dit schip kan horizontaal of verticaal worden geplaatst. 
+
+Zorg ervoor dat bij het plaatsen van het schip de volgende voorwaarden worden gecontroleerd:
+
+-    Het schip moet binnen de grenzen van het bord passen.
+-    Het schip mag niet overlappen met andere schepen of de rand van het bord.
+
+3. Random Plaatsing:
+
+-    Genereer willekeurige coördinaten voor de startpositie van het schip.
+-    Bepaal of het schip horizontaal of verticaal geplaatst moet worden.
+-    Controleer of de plaatsing geldig is en plaats het schip indien mogelijk.
+
+----------------------------------------------------------------------------------------------
+
+1. Meerdere schepen op de map toevoegen
+-	maak een vliegdekschip(5), slagschip(4), onderzeeër(3), patroulleboot(2)
+-	deze worden random op het bord geplaatst
+-	schepen eerst onzichtbaar maken
+
+2. Torpedo's afvuren op zee-vlak
+-	bij muisklik een torpedo afvuren
+-	als deze de zee raakt maakt deze een plons en veranderd het vlak in wit (later animeren)
+-	als deze een boot raakt maakt deze een explosie en wordt het schip zichtbaar in rood (later animeren)
+-	als hij een geheel schip kapot heeft gemaakt zinkt het schip?
+
+3. Punten teller (leaderboard)
+-	teller voor het bijhouden van het aantal afgevuurde schoten
+-	teller voor het aantal keer geraakt
+-	timer voor het bijhouden van de tijd
+-	omzetten naar algemene score voor het leaderboard
+
+4. Vebeteren MAP naar een 3 dimensionaal 
+-	kantel de map zodat deze 3 dimensies krijgt
+-	gebruik een image-pack voor de schepen(3d)
 
 
-
-
-score bijhouden per blokje en optellen
-
-
-
-
-
+5. maak het spel multiplayer

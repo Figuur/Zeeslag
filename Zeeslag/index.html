@@ -7,35 +7,80 @@
     <title>Zeeslag</title>
 </head>
 <body>
-        <div class="game-wrapper">
+    <video autoplay muted loop id="myVideo">
+        <source src="wave-effect.mp4" type="video/mp4">
+    </video>
+    
+    <div class="game-wrapper">
         <!-- <canvas id="myCanvas" width="1000" height="1000"></canvas> -->
-            <table id="Zeeslag-bord">
-                <tr>
-                    <th id="table-heading">×</th>
-                    <th>1</th>
-                    <th>2</th>
-                    <th>3</th>
-                    <th>4</th>
-                    <th>5</th>
-                    <th>6</th>
-                    <th>7</th>
-                    <th>8</th>
-                    <th>9</th>
-                    <th>10</th>
-                </tr>
-                <script>
-                    for (let i = 0; i < 10; i++) {
-                        document.write('<tr><th>' + String.fromCharCode(65 + i) + '</th>');
-                        for (let j = 0; j < 10; j++) {
-                            const letter = String.fromCharCode(65 + i);
-                            const number = j + 1;
-                            const cellId = `${letter}${number}`;
+         
+        <table id="Zeeslag-bord">
+            <tr>
+                <th id="table-heading">×</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+            </tr>
+            <script>
+                let zee = [  // MOET VIERKANT ZIJN
+                    [0,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0,0],
+                ];  // het Model
+
+                function randombootplaatsen(){
+                    const bootlengte = 3;  // Vaste lengte van 3
+                    let horizonofverticaal = Math.floor(Math.random() * 2);
+                    let tellervoorboot = zee.length - (bootlengte - 1);
+                    let randomgetalrij = Math.floor(Math.random() * tellervoorboot)
+                    let randomgetal = Math.floor(Math.random() * tellervoorboot)
+                    for(let b = 0; b < bootlengte; b++){
+                        zee[randomgetalrij][randomgetal] = 1;
+                        if(horizonofverticaal == 0){
+                            randomgetalrij++;
+                        }else{
+                            randomgetal++; 
+                        }                                            
+                    }
+                }
+
+                // Plaats eerst de boot
+                randombootplaatsen();
+
+                // Teken het bord
+                for (let i = 0; i < 10; i++) {
+                    document.write('<tr><th>' + String.fromCharCode(65 + i) + '</th>');
+                    for (let j = 0; j < zee.length; j++) {
+                        const letter = String.fromCharCode(65 + i);
+                        const nummer = j + 1;
+                        const cellId = `${letter}${nummer}`;
+                        
+                        if(zee[i][j] === 1){
+                            // Boot cellen tonen altijd hun cellId, maar geen hover effect
+                            document.write(`<td id="${cellId}" class="boot1kleur" style="pointer-events: none">${cellId}</td>`);
+                        } else {
+                            // Zee cellen tonen cellId bij hover
                             document.write(`<td id="${cellId}">${cellId}</td>`);
                         }
-                        document.write('</tr>');
                     }
-                </script>
-            </table>
+                    document.write('</tr>');
+                }
+            </script>
+        </table>
     </div>
 </body>
 </html>
